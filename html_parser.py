@@ -24,9 +24,9 @@ traffic_list = []
 countries = []
 
 
-def read_file(file):
+def read_file(file_name):
 
-    f = open(file, 'r')
+    f = open(file_name, 'r')
     start_line = f.readlines()
 
     for i in start_line[8:]:
