@@ -98,9 +98,24 @@ def show_dport():
     plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')
     plt.ylabel('Total', fontsize=10, fontweight='bold')
     dportfig = plt.gcf()
-    dportfig.savefig(os.path.join('http/')+"http_dport.png")
+    dportfig.set_size_inches(10, 5)
+    dportfig.savefig(os.path.join('bro_app/static/images/tmp/http/')+"http_dport.png")
     #plt.show()
     plt.close()
+
+
+def dport_table():
+
+    data = Counter(sport_list)
+
+    html = "<table><tr><th>Port</th><th>Total</th></tr>"
+
+    for key, value in data.iteritems():
+        html += ("<tr><td>"+str(key)+"</td><td>"+str(value)+"</td></tr>")
+
+    html+= "</table>"
+    #print html
+    return html
 
 
 def show_destip():
@@ -314,6 +329,7 @@ def main():
     print(Counter(dport))
     print(Counter(url_list))
     print(Counter(traffic_list))
+    dport_table()
     show_traffic()
     show_dport()
     show_destip()

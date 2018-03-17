@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bro Logger Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+        body {
+            background-color: #8c8c8c;
+            color: #ffffff;
+        }
+        .banner {
+            background-color: #8c8c8c;
+            color: #ffffff;
+        }
+        .container {
+            background-color: #8c8c8c;
+        }
+        .container.img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <h1><img src="static/images/bro-eyes.png">        Bro Log Report</h1>
+</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{url_for('index')}}">Bro Logger</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li class="active"><a href="{{ url_for('http_dashboard')}}">HTTP Dashboard</a></li>
+            <li><a href="{{ url_for('dns_dashboard')}}">DNS Dashboard</a></li>
+            <li><a href="{{ url_for('files_dashboard')}}">Files Dashboard</a>
+            <li><a href="{{ url_for('dhcp_dashboard')}}">DHCP Dashboard</a>
+        </ul>
+    </div>
+</nav>
+    <div class="container">
+        <h2>HTTP Log File</h2>
+        <h3>Destination IPs</h3>
+
+        <h3>Top Destination Countries</h3>
+        <img src="http/http_country.png"/>
+        <h3>Destination Ports</h3>
+        <img src="static/images/tmp/http/http_dport.png"/>
+        <h3>Destination Cities</h3>
+        <img src="http/http_city.png"/>
+        <h3>Top Urls</h3>
+        <img src="http/http_urls.png"/>
+        <h3>Top User-Agents</h3>
+        <img src="http/http_user_agents.png"/>
+    </div>
+</nav>
+
+</body>
+</html>
