@@ -9,6 +9,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import pylab
 import geoip2.database
+import pandas as pd
+from pandas.plotting._tools import table
 
 """
 Parser File
@@ -106,16 +108,17 @@ def show_dport():
 
 def dport_table():
 
-    data = Counter(sport_list)
+    data = Counter(dport)
+    df = pd.DataFrame.from_dict(data, orient='index')
 
-    html = "<table><tr><th>Port</th><th>Total</th></tr>"
-
-    for key, value in data.iteritems():
-        html += ("<tr><td>"+str(key)+"</td><td>"+str(value)+"</td></tr>")
-
-    html+= "</table>"
-    #print html
-    return html
+    ax = plt.subplot(111, frame_on=False)  # no visible frame
+    ax.xaxis.set_visible(False)  # hide the x axis
+    ax.yaxis.set_visible(False)  # hide the y axis
+    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='center', loc='center')  # where df is your data frame
+    #df.plot(table=df, ax=ax)
+    dt = plt.gcf()
+    dt.set_size_inches(10, 4)
+    plt.show()
 
 
 def show_destip():
@@ -142,6 +145,26 @@ def show_destip():
     dportfig = plt.gcf()
     dportfig.set_size_inches(10, 5)
     dportfig.savefig(os.path.join('http/')+"http_destip.png")
+    #plt.show()
+    plt.close()
+
+
+def destip_table():
+
+    data = Counter(dest_ip)
+    df = pd.DataFrame.from_dict(data, orient='index')
+    #df.columns = ['IP' 'Total']
+    df.rename(columns={-1: 'IP', 0: 'Total'}, inplace=True)
+
+    ax = plt.subplot(111, frame_on=False)  # no visible
+    ax.set_title('All Destination IPs', color='white', fontsize=14, fontweight='bold')
+    ax.xaxis.set_visible(False)  # hide the x axis
+    ax.yaxis.set_visible(False)  # hide the y axis
+    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='center', loc='center')  # where df is your data frame
+    dt = plt.gcf()
+    dt.set_facecolor('#8c8c8c')
+    dt.set_size_inches(5, 5)
+    dt.savefig(os.path.join('http/')+"http_table_destip.png", facecolor=dt.get_facecolor())
     #plt.show()
     plt.close()
 
@@ -200,6 +223,26 @@ def show_user_agent():
     plt.close()
 
 
+def user_agent_table():
+
+    data = Counter(user_agent_list)
+    df = pd.DataFrame.from_dict(data, orient='index')
+    #df.columns = ['IP' 'Total']
+    df.rename(columns={-1: 'IP', 0: 'Total'}, inplace=True)
+
+    ax = plt.subplot(111, frame_on=False)  # no visible
+    ax.set_title('All User Agents', color='white', fontsize=14, fontweight='bold', loc='left')
+    ax.xaxis.set_visible(False)  # hide the x axis
+    ax.yaxis.set_visible(False)  # hide the y axis
+    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='right', loc='center')  # where df is your data frame
+    dt = plt.gcf()
+    dt.set_facecolor('#8c8c8c')
+    dt.set_size_inches(10, 5)
+    dt.savefig(os.path.join('http/')+"http_table_user_agent.png", facecolor=dt.get_facecolor())
+    #plt.show()
+    plt.close()
+
+
 def show_country():
 
     GeoIPDatabase = 'GeoLite2-Country.mmdb'     #IP database file
@@ -237,9 +280,21 @@ def show_country():
 
 def table_country():
 
-    print("<tr><th>Country</th><th><Total</th></tr>")
-    for country, total in Counter(countries).items():
-        print("<tr><td>{}</td> <td>{}</td></tr>".format(country, total))
+    data = Counter(countries)
+    df = pd.DataFrame.from_dict(data, orient='index')
+    df.rename(columns={0: 'Total'}, inplace=True)
+
+    ax = plt.subplot(111, frame_on=False)  # no visible
+    ax.set_title('All Countries', color='white', fontsize=14, fontweight='bold', loc='center')
+    ax.xaxis.set_visible(False)  # hide the x axis
+    ax.yaxis.set_visible(False)  # hide the y axis
+    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='right', loc='center')  # where df is your data frame
+    dt = plt.gcf()
+    dt.set_facecolor('#8c8c8c')
+    dt.set_size_inches(8, 6)
+    dt.savefig(os.path.join('http/')+"http_table_countries.png", facecolor=dt.get_facecolor())
+    #plt.show()
+    plt.close()
 
 
 def show_city():
@@ -321,21 +376,15 @@ def generate_html_report():
 
 def main():
     read_file('http.log')
-    #print_log()
-    #print(parsed_log[0])
-    print(Counter(source_ip))
-    print(Counter(sport_list))
-    print(Counter(dest_ip))
-    print(Counter(dport))
-    print(Counter(url_list))
-    print(Counter(traffic_list))
-    dport_table()
+    destip_table()
     show_traffic()
     show_dport()
     show_destip()
     show_urls()
     show_user_agent()
+    user_agent_table()
     show_country()
+    table_country()
     show_city()
     generate_html_report()
 
