@@ -237,7 +237,7 @@ def user_agent_table():
     table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='right', loc='center')  # where df is your data frame
     dt = plt.gcf()
     dt.set_facecolor('#8c8c8c')
-    dt.set_size_inches(10, 5)
+    dt.set_size_inches(10, 7)
     dt.savefig(os.path.join('http/')+"http_table_user_agent.png", facecolor=dt.get_facecolor())
     #plt.show()
     plt.close()
@@ -249,8 +249,11 @@ def show_country():
     ipData = geoip2.database.Reader(GeoIPDatabase)
 
     for i in dest_ip:
+        #try:
         location = ipData.country(i)
         countries.append(location.country.name)
+
+        #expect geoip2.errors.AddressNotFoundError:
 
     SMALL_SIZE = 10
     matplotlib.rc('font', size=SMALL_SIZE)
@@ -334,42 +337,6 @@ def show_city():
 
 
 def generate_html_report():
-
-    #f = open("Bro-Log-Report.html", 'w')
-
-    findings = """
-    <html>
-        <head>
-            <title>Bro Logger Report</title>
-            <style>
-                h1{
-                    color: #3377ff;
-                }
-                img {
-                    align: center;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Bro Log Report</h1>
-            <h2>HTTP Log File</h2>
-            <h3>Destination IPs</h3>
-            <img src= "http_destip.png"/>
-            <h3>Top Destination Countries</h3>
-            <img src="http_country.png"/>
-            <h3>Destination Ports</h3>
-            <img src="http_dport.png"/>
-            <h3>Destination Cities</h3>
-            <img src="http_city.png"/>
-            <h3>Top Urls</h3>
-            <img src="http_urls.png"/>
-            <h3>Top User-Agents</h3>
-            <img src="http_user_agents.png"/>
-        </body>
-    </html>
-    """
-    #f.write(findings)
-    #f.close()
 
     webbrowser.open_new_tab("Bro-Log-Report.html")
 
