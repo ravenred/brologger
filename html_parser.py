@@ -11,6 +11,7 @@ import pylab
 import geoip2.database
 import pandas as pd
 from pandas.plotting._tools import table
+from mpl_toolkits.basemap import Basemap
 
 """
 Parser File
@@ -281,6 +282,21 @@ def show_country():
     plt.close()
 
 
+def map_country():
+
+    m = Basemap()
+    #m.drawcoastlines()
+    #m.drawcountries()
+    #m.drawmapboundary(fill_color='aqua')
+    #m.fillcontinents(color='coral', lake_color='aqua')
+    m.bluemarble()
+    md = plt.gcf()
+    md.set_size_inches(10, 8)
+    md.savefig(os.path.join('http/')+"http_map_country.png")
+    #plt.show()
+    plt.close()
+
+
 def table_country():
 
     data = Counter(countries)
@@ -336,6 +352,38 @@ def show_city():
     plt.close()
 
 
+def map_cities():
+
+    #plt.figure(figsize=(14, 8))
+    m = Basemap()
+    m.bluemarble()
+
+    GeoIPDatabase = 'GeoLite2-City.mmdb'     #IP database file
+    ipData = geoip2.database.Reader(GeoIPDatabase)
+    cities = []
+    lat = []
+    long = []
+
+    for i in dest_ip:
+        location = ipData.city(i)
+        cities.append(unicode(location.city.name))
+        lat.append(location.location.latitude)
+        long.append(location.location.longitude)
+
+    x, y = m(long, lat)
+    m.plot(x, y, 'ro', markersize=12)
+
+    for city, xpt, ypt in zip(cities, long, lat):
+        plt.text(xpt, ypt, city)
+
+    md = plt.gcf()
+    md.set_size_inches(10, 8)
+    md.savefig(os.path.join('http/')+"http_map_cities.png")
+    plt.title('Top Attacking Cities Map')
+    #plt.show()
+    plt.close()
+
+
 def generate_html_report():
 
     webbrowser.open_new_tab("Bro-Log-Report.html")
@@ -353,8 +401,9 @@ def main():
     show_country()
     table_country()
     show_city()
-    generate_html_report()
-
+    #generate_html_report()
+    map_country()
+    map_cities()
 
 if __name__ == '__main__':
     main()
