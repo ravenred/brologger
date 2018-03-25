@@ -49,4 +49,4 @@ def query_md5():
         print(response.json())
 
 read_file('0b08c5785b3c01c2113b6e8a4bf6738d_20120817/dns.log')
-query_md5()
+#query_md5()

@@ -9,6 +9,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import pylab
 import geoip2.database
+import geoip2.errors
 import pandas as pd
 from pandas.plotting._tools import table
 from mpl_toolkits.basemap import Basemap
@@ -102,7 +103,7 @@ def show_dport():
     plt.ylabel('Total', fontsize=10, fontweight='bold')
     dportfig = plt.gcf()
     dportfig.set_size_inches(10, 5)
-    dportfig.savefig(os.path.join('bro_app/static/images/tmp/http/')+"http_dport.png")
+    dportfig.savefig(os.path.join('http/')+"http_dport.png")
     #plt.show()
     plt.close()
 
@@ -246,15 +247,16 @@ def user_agent_table():
 
 def show_country():
 
-    GeoIPDatabase = 'GeoLite2-Country.mmdb'     #IP database file
+    GeoIPDatabase = 'db/GeoLite2-Country.mmdb'     #IP database file
     ipData = geoip2.database.Reader(GeoIPDatabase)
 
     for i in dest_ip:
-        #try:
-        location = ipData.country(i)
-        countries.append(location.country.name)
+        try:
+            location = ipData.country(i)
+            countries.append(location.country.name)
 
-        #expect geoip2.errors.AddressNotFoundError:
+        except geoip2.errors.AddressNotFoundError:
+            print("IP not in Database")
 
     SMALL_SIZE = 10
     matplotlib.rc('font', size=SMALL_SIZE)
@@ -318,13 +320,16 @@ def table_country():
 
 def show_city():
 
-    GeoIPDatabase = 'GeoLite2-City.mmdb'     #IP database file
+    GeoIPDatabase = 'db/GeoLite2-City.mmdb'     #IP database file
     ipData = geoip2.database.Reader(GeoIPDatabase)
     cities = []
 
     for i in dest_ip:
-        location = ipData.city(i)
-        cities.append(unicode(location.city.name))
+        try:
+            location = ipData.city(i)
+            cities.append(unicode(location.city.name))
+        except geoip2.errors.AddressNotFoundError:
+            print("IP not in Database:" + i)
 
     small_size = 8
     matplotlib.rc('font', size=small_size)
@@ -358,17 +363,21 @@ def map_cities():
     m = Basemap()
     m.bluemarble()
 
-    GeoIPDatabase = 'GeoLite2-City.mmdb'     #IP database file
+    GeoIPDatabase = 'db/GeoLite2-City.mmdb'     #IP database file
     ipData = geoip2.database.Reader(GeoIPDatabase)
     cities = []
     lat = []
     long = []
 
     for i in dest_ip:
-        location = ipData.city(i)
-        cities.append(unicode(location.city.name))
-        lat.append(location.location.latitude)
-        long.append(location.location.longitude)
+        try:
+            location = ipData.city(i)
+            cities.append(unicode(location.city.name))
+            lat.append(location.location.latitude)
+            long.append(location.location.longitude)
+
+        except geoip2.errors.AddressNotFoundError:
+            print("IP not in Database:" + i)
 
     x, y = m(long, lat)
     m.plot(x, y, 'ro', markersize=12)
@@ -401,7 +410,7 @@ def main():
     show_country()
     table_country()
     show_city()
-    #generate_html_report()
+    generate_html_report()
     map_country()
     map_cities()
 
