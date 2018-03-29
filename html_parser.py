@@ -330,7 +330,7 @@ This method opens up the template report
 
 def generate_html_report():
 
-    webbrowser.open_new_tab("Bro-Log-Report.html")      # Uses web browser library to open report
+    webbrowser.open_new_tab("http_bro_log.html")      # Uses web browser library to open report
 
 
 """
@@ -345,7 +345,6 @@ def main():
     show_urls()
     show_user_agent()
     show_country()
-    table_country()
     show_city()
     map_country()
     map_cities()
