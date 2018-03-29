@@ -59,7 +59,7 @@ def show_destination_port():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals, color='green')    # The figure is plotted
-    plt.suptitle('Top 10 Destination Ports', fontsize=14, fontweight='bold')    # Title is set
+    plt.suptitle('Top Destination Ports', fontsize=14, fontweight='bold')    # Title is set
     plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')             # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
@@ -91,7 +91,7 @@ def show_destination_ip():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals)                   # The figure is plotted
-    plt.suptitle('Top 10 Destination IPs', fontsize=14, fontweight='bold')      # Title is set
+    plt.suptitle('Top Destination IPs', fontsize=14, fontweight='bold')      # Title is set
     plt.xlabel('IPs', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted

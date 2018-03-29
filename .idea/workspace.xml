@@ -15,60 +15,34 @@
       <file leaf-file-name="html_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="74" lean-forward="true" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-              <folding />
+            <state relative-caret-position="1890">
+              <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+              <folding>
+                <element signature="e#55#142#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="files.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/files.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weird.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/weird.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="108" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="http_bro_log.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/http_bro_log.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="35" column="47" lean-forward="false" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weird_bro_log.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weird_bro_log.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weird_parser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weird_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weird_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1680">
-              <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+            <state relative-caret-position="441">
+              <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_menu.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_menu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,14 +79,14 @@
         <option value="$PROJECT_DIR$/bro_app/templates/index.html" />
         <option value="$PROJECT_DIR$/bro_app/templates/http_dashboard.html" />
         <option value="$PROJECT_DIR$/bro_app/main.py" />
-        <option value="$PROJECT_DIR$/main_menu.py" />
         <option value="$PROJECT_DIR$/dns_parser.py" />
         <option value="$PROJECT_DIR$/files_parser.py" />
-        <option value="$PROJECT_DIR$/html_parser.py" />
         <option value="$PROJECT_DIR$/Bro-Log-Report.html" />
-        <option value="$PROJECT_DIR$/weird_parser.py" />
         <option value="$PROJECT_DIR$/http_bro_log.html" />
         <option value="$PROJECT_DIR$/weird_bro_log.html" />
+        <option value="$PROJECT_DIR$/html_parser.py" />
+        <option value="$PROJECT_DIR$/weird_parser.py" />
+        <option value="$PROJECT_DIR$/main_menu.py" />
       </list>
     </option>
   </component>
@@ -186,7 +160,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.weird_parser">
+  <component name="RunManager" selected="Python.main_menu">
     <configuration default="false" name="html_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -350,9 +324,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.weird_parser" />
-        <item index="1" class="java.lang.String" itemvalue="Python.html_parser" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_menu" />
+        <item index="0" class="java.lang.String" itemvalue="Python.main_menu" />
+        <item index="1" class="java.lang.String" itemvalue="Python.weird_parser" />
+        <item index="2" class="java.lang.String" itemvalue="Python.html_parser" />
         <item index="3" class="java.lang.String" itemvalue="Python.dns_parser" />
         <item index="4" class="java.lang.String" itemvalue="Python.files_parser" />
       </list>
@@ -518,16 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/loaded_scripts.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -560,14 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/weird.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files_parser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -575,14 +531,6 @@
           <folding>
             <element signature="e#27#42#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="74" lean-forward="true" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,12 +550,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/weird.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
+          <folding>
+            <element signature="e#55#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/weird_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="80" column="40" lean-forward="true" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
+        <state relative-caret-position="441">
+          <caret line="93" column="21" lean-forward="true" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="82" lean-forward="false" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

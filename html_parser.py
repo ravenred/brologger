@@ -88,7 +88,7 @@ def show_destination_port():
     plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')             # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
-    dportfig.set_size_inches(10, 5)                                             # Figure is sized
+    dportfig.set_size_inches(12, 5)                                             # Figure is sized
     dportfig.savefig(os.path.join('http/')+"http_dport.png")                    # Figure is saved
     plt.close()                                                                 # Graph is closed
 
@@ -120,7 +120,7 @@ def show_destination_ip():
     plt.xlabel('IPs', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
-    dportfig.set_size_inches(10, 5)                                             # Figure is sized
+    dportfig.set_size_inches(12, 5)                                             # Figure is sized
     dportfig.savefig(os.path.join('http/')+"http_destip.png")                   # Figure is saved
     plt.close()                                                                 # Graph is closed
 
@@ -225,7 +225,7 @@ def show_country():
     plt.xlabel('Countries', fontsize=12, fontweight='bold')
     plt.ylabel('Total', fontsize=12, fontweight='bold')
     dportfig = plt.gcf()
-    dportfig.set_size_inches(10, 5)
+    dportfig.set_size_inches(12, 5)
     dportfig.savefig(os.path.join('http/')+"http_country.png")
     plt.close()
 
@@ -235,7 +235,7 @@ def map_country():
     m = Basemap()
     m.bluemarble()
     md = plt.gcf()
-    md.set_size_inches(10, 8)
+    md.set_size_inches(12, 8)
     md.savefig(os.path.join('http/')+"http_map_country.png")
     plt.close()
 
@@ -317,7 +317,7 @@ def map_cities():
         plt.text(xpt, ypt, city, color='w')             # Coloured in white text
 
     md = plt.gcf()                                                  # Format the figure
-    md.set_size_inches(10, 6)                                       # Set the size of the figure
+    md.set_size_inches(12, 6)                                       # Set the size of the figure
     md.savefig(os.path.join('http/')+"http_map_cities.png")         # Save the figure
     plt.title('Top Attacking Cities Map')                           # Set the title
     plt.close()                                                     # Close the graph
