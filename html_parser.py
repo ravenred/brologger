@@ -339,7 +339,6 @@ Main method this calls other methods needed for gathering data from the log file
 
 
 def main():
-    read_file('http.log')
     show_destination_port()
     show_destination_ip()
     show_urls()

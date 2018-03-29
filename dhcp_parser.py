@@ -7,9 +7,9 @@ from collections import Counter                 # Imports Counter for lists
 
 """These are the lists used to gather the data from the log"""
 parsed_log = []                     # Parsed Bro Log with converted time
-weird_message_list = []             # Weird messages are stored in a list
 destination_ip_list = []            # Destination IP List
 destination_port_list = []          # Destination Port List
+mac_address_list = []
 
 """
 This method reads in the http.log
@@ -30,13 +30,13 @@ def read_file(file_name):           # Start of read file
             parsed_log.append(new_line)                                 # The new line is appended to the parsed log
 
             # All the fields from the http.log are mapped to a variable in this tuple
-            time, uid, id_orig_h, id_orig_p, resp_h, \
-            resp_p, name, addl, notice, peer = \
+            time, uid, orig_h, orig_p, resp_h, resp_p, \
+                mac, assigned_ip, lease_time, trans_id = \
                 tuple(map(str, new_line.split("\t")))       # Bro logs are spaced using tabs to separate each field
 
-            weird_message_list.append(name)     # The name of messages from the log file is added to the list
             destination_ip_list.append(resp_h)      # The Destination IP from the log file is added to the list
             destination_port_list.append(resp_p)    # The Destination Port from the log file is added to the list
+            mac_address_list.append(mac)
 
 
 """
