@@ -2,17 +2,15 @@
 Author : Ian O'Connell
 Student No. : B00080570
 """
-import datetime                                 #Import datetime module for epoch time
-import webbrowser                               #Imports firefox open tab
-import os                                       #Imports the real file path for saving and reading files
-from collections import Counter                 #Imports Counter for lists
-import matplotlib                               #Imports Libraries for graphs
-import matplotlib.pyplot as plt                 #Shortens the matplotlib library call
-import geoip2.database                          #Imports the database reader
-import geoip2.errors                            #Imports the Error message
-import pandas as pd                             #Imports the Pandas module for tables
-from pandas.plotting._tools import table        #Imports
-from mpl_toolkits.basemap import Basemap
+import datetime                                 # Import datetime module for epoch time
+import webbrowser                               # Imports firefox open tab
+import os                                       # Imports the real file path for saving and reading files
+from collections import Counter                 # Imports Counter for lists
+import matplotlib                               # Imports Libraries for graphs
+import matplotlib.pyplot as plt                 # Shortens the matplotlib library call
+import geoip2.database                          # Imports the database reader
+import geoip2.errors                            # Imports the Error message
+from mpl_toolkits.basemap import Basemap        # From the MPL tools imports Basemap
 
 """These are the lists used to gather the data from the log"""
 parsed_log = []                # Parsed Bro Log with converted time
@@ -73,11 +71,12 @@ This method displays the destination port in a graph
 
 def show_destination_port():
 
-    s = Counter(source_port_list)       # Counts the top destination ports in the log file
-    sDict = dict(s)                     # Converts them to a dictionary
-    xVals = []                          # X Value list is declared
-    yVals = []                          # Y Value list is declared
-    count = 0                           # Loop count is set to zero
+    s = Counter(source_port_list)           # Counts the top destination ports in the log file
+    sDict = dict(s)                         # Converts them to a dictionary
+    xVals = []                              # X Value list is declared
+    yVals = []                              # Y Value list is declared
+    count = 0                               # Loop count is set to zero
+
     for key, value in sorted(sDict.iteritems(), key=lambda (k, v): (v, k)):     # Sorts values into X & Y
         count += 1                          # Count is incremented by one
         if count > len(sDict)-10:           # If the count is greater than 10 append the first 10 x & y values
@@ -92,22 +91,6 @@ def show_destination_port():
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
     dportfig.savefig(os.path.join('http/')+"http_dport.png")                    # Figure is saved
     plt.close()                                                                 # Graph is closed
-
-
-def destination_port_table():
-
-    data = Counter(destination_port_list)
-    df = pd.DataFrame.from_dict(data, orient='index')
-
-    ax = plt.subplot(111, frame_on=False)  # no visible frame
-    ax.xaxis.set_visible(False)  # hide the x axis
-    ax.yaxis.set_visible(False)  # hide the y axis
-
-    # Where df is your data frame
-    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='center', loc='center')
-    dt = plt.gcf()
-    dt.set_size_inches(10, 4)
-    plt.show()
 
 
 """
@@ -140,26 +123,6 @@ def show_destination_ip():
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
     dportfig.savefig(os.path.join('http/')+"http_destip.png")                   # Figure is saved
     plt.close()                                                                 # Graph is closed
-
-
-def destination_ip_table():
-
-    data = Counter(destination_ip_list)
-    df = pd.DataFrame.from_dict(data, orient='index')
-    df.rename(columns={-1: 'IP', 0: 'Total'}, inplace=True)
-
-    ax = plt.subplot(111, frame_on=False)           # no visible
-    ax.set_title('All Destination IPs', color='white', fontsize=14, fontweight='bold')
-    ax.xaxis.set_visible(False)                     # hide the x axis
-    ax.yaxis.set_visible(False)                     # hide the y axis
-
-    # Where df is your data frame
-    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='center', loc='center')
-    dt = plt.gcf()
-    dt.set_facecolor('#8c8c8c')
-    dt.set_size_inches(5, 5)
-    dt.savefig(os.path.join('http/')+"http_table_destip.png", facecolor=dt.get_facecolor())
-    plt.close()
 
 
 """
@@ -224,26 +187,6 @@ def show_user_agent():
     plt.close()
 
 
-def user_agent_table():
-
-    data = Counter(user_agent_list)
-    df = pd.DataFrame.from_dict(data, orient='index')
-    df.rename(columns={-1: 'IP', 0: 'Total'}, inplace=True)
-
-    ax = plt.subplot(111, frame_on=False)   # no visible
-    ax.set_title('All User Agents', color='white', fontsize=14, fontweight='bold', loc='left')
-    ax.xaxis.set_visible(False)             # hide the x axis
-    ax.yaxis.set_visible(False)             # hide the y axis
-
-    # Where df is your data frame
-    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='right', loc='center')
-    dt = plt.gcf()
-    dt.set_facecolor('#8c8c8c')
-    dt.set_size_inches(10, 7)
-    dt.savefig(os.path.join('http/')+"http_table_user_agent.png", facecolor=dt.get_facecolor())
-    plt.close()
-
-
 """
 This method displays the Countries in a graph
 """
@@ -251,11 +194,11 @@ This method displays the Countries in a graph
 
 def show_country():
 
-    geo_ip_database = 'db/GeoLite2-Country.mmdb'                  # IP database file
+    geo_ip_database = 'db/GeoLite2-Country.mmdb'                   # IP database file
     ip_data = geoip2.database.Reader(geo_ip_database)              # Reader for the database
 
-    for i in destination_ip_list:
-        try:
+    for i in destination_ip_list:                                  # Loops through all IPs in destination list
+        try:                                                       # Try
             location = ip_data.country(i)
             countries_list.append(location.country.name)
 
@@ -294,26 +237,6 @@ def map_country():
     md = plt.gcf()
     md.set_size_inches(10, 8)
     md.savefig(os.path.join('http/')+"http_map_country.png")
-    plt.close()
-
-
-def table_country():
-
-    data = Counter(countries_list)
-    df = pd.DataFrame.from_dict(data, orient='index')
-    df.rename(columns={0: 'Total'}, inplace=True)
-
-    ax = plt.subplot(111, frame_on=False)       # no visible
-    ax.set_title('All Countries', color='white', fontsize=14, fontweight='bold', loc='center')
-    ax.xaxis.set_visible(False)                 # hide the x axis
-    ax.yaxis.set_visible(False)                 # hide the y axis
-
-    # Where df is your data frame
-    table(ax, df, colWidths=[0.17]*len(df.columns), cellLoc='center', rowLoc='right', loc='center')
-    dt = plt.gcf()
-    dt.set_facecolor('#8c8c8c')
-    dt.set_size_inches(8, 6)
-    dt.savefig(os.path.join('http/')+"http_table_countries.png", facecolor=dt.get_facecolor())
     plt.close()
 
 
@@ -417,18 +340,16 @@ Main method this calls other methods needed for gathering data from the log file
 
 def main():
     read_file('http.log')
-    destination_ip_table()
     show_destination_port()
     show_destination_ip()
     show_urls()
     show_user_agent()
-    user_agent_table()
     show_country()
     table_country()
     show_city()
-    generate_html_report()
     map_country()
     map_cities()
+    generate_html_report()
 
 if __name__ == '__main__':
-    main()
+    main()                  # Main method is called
