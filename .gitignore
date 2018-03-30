@@ -6,3 +6,4 @@ bro_app/http.log
 0ad9515239c4033d84936c2e6ba00ed1_20120624/app_stats.log
 *.log
 *.pyc
+*.pyc
