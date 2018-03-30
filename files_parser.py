@@ -28,7 +28,6 @@ def read_file(file):
             convert = datetime.datetime.fromtimestamp(float(i[:17]))
             new_line = str(convert) + " " + i[17:]
             parsed_log.append(new_line)
-            #print(new_line)
 
             time, fuid, tx_hosts, rx_hosts,	conn_uids, source, depth, analyzers, mime_type, \
             filename, duration, local_orig, is_orig, seen_bytes, total_bytes, missing_bytes, \
