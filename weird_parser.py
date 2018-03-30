@@ -40,6 +40,35 @@ def read_file(file_name):           # Start of read file
 
 
 """
+This method displays all of the weird messages
+"""
+
+
+def show_weird_messages():
+
+    s = Counter(weird_message_list)         # Counts the top notices ports in the log file
+    sDict = dict(s)                         # Converts them to a dictionary
+    xVals = []                              # X Value list is declared
+    yVals = []                              # Y Value list is declared
+    count = 0                               # Loop count is set to zero
+
+    for key, value in sorted(sDict.iteritems(), key=lambda (k, v): (v, k)):     # Sorts values into X & Y
+        count += 1                          # Count is incremented by one
+        if count > len(sDict)-10:           # If the count is greater than 10 append the first 10 x & y values
+            xVals.append(key)               # The x value gets added
+            yVals.append(value)             # The y value gets added
+
+    plt.bar(xVals, yVals, color='green')    # The figure is plotted
+    plt.suptitle('Top Destination Ports', fontsize=14, fontweight='bold')    # Title is set
+    plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')             # X axis titles
+    plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
+    dportfig = plt.gcf()                                                        # Figure is formatted
+    dportfig.set_size_inches(10, 5)                                             # Figure is sized
+    dportfig.savefig(os.path.join('weird/')+"weird_messages.png")                  # Figure is saved
+    plt.close()
+
+
+"""
 This method displays the destination port in a graph
 """
 
@@ -91,7 +120,7 @@ def show_destination_ip():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals)                   # The figure is plotted
-    plt.suptitle('Top Destination IPs', fontsize=14, fontweight='bold')      # Title is set
+    plt.suptitle('Top Notices', fontsize=14, fontweight='bold')      # Title is set
     plt.xlabel('IPs', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
@@ -119,6 +148,7 @@ def main():
 
     show_destination_ip()
     show_destination_port()
+    show_weird_messages()
     generate_weird_report()
 
 
