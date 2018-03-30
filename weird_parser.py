@@ -59,8 +59,8 @@ def show_weird_messages():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals, color='green')    # The figure is plotted
-    plt.suptitle('Top Destination Ports', fontsize=14, fontweight='bold')    # Title is set
-    plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')             # X axis titles
+    plt.suptitle('Top Weird Messages', fontsize=14, fontweight='bold')    # Title is set
+    plt.xlabel('Top Weird Messages', fontsize=10, fontweight='bold')             # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
@@ -87,7 +87,7 @@ def show_destination_port():
             xVals.append(key)               # The x value gets added
             yVals.append(value)             # The y value gets added
 
-    plt.bar(xVals, yVals, color='green')    # The figure is plotted
+    plt.bar(xVals, yVals, color='orange')   # The figure is plotted
     plt.suptitle('Top Destination Ports', fontsize=14, fontweight='bold')    # Title is set
     plt.xlabel('Destination Ports', fontsize=10, fontweight='bold')             # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
@@ -119,8 +119,8 @@ def show_destination_ip():
             xVals.append(key)               # The x value gets added
             yVals.append(value)             # The y value gets added
 
-    plt.bar(xVals, yVals)                   # The figure is plotted
-    plt.suptitle('Top Notices', fontsize=14, fontweight='bold')      # Title is set
+    plt.bar(xVals, yVals, color='purple')                                       # The figure is plotted
+    plt.suptitle('Top Notices', fontsize=14, fontweight='bold')                 # Title is set
     plt.xlabel('IPs', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted

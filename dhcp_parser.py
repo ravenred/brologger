@@ -154,7 +154,7 @@ def show_vendor():
             xVals.append(key)               # The x value gets added
             yVals.append(value)             # The y value gets added
 
-    plt.bar(xVals, yVals)                   # The figure is plotted
+    plt.bar(xVals, yVals, color='purple')   # The figure is plotted
     plt.suptitle('Top Mac Vendors', fontsize=14, fontweight='bold')      # Title is set
     plt.xlabel('Vendors', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
@@ -186,7 +186,7 @@ def show_mac_addresses():
             xVals.append(key)               # The x value gets added
             yVals.append(value)             # The y value gets added
 
-    plt.bar(xVals, yVals)                   # The figure is plotted
+    plt.bar(xVals, yVals, color='red')   # The figure is plotted
     plt.suptitle('Top Mac Address', fontsize=14, fontweight='bold')      # Title is set
     plt.xlabel('Address', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
