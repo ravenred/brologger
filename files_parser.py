@@ -14,6 +14,7 @@ import geoip2.database
 
 parsed_log = []
 md5_list = []
+file_type_list = []
 
 
 def read_file(file):
@@ -34,8 +35,10 @@ def read_file(file):
             overflow_bytes,	timedout, parent_fuid, md5,	sha1, sha256, extracted = \
                 tuple(map(str, new_line.split("\t")))
 
-            print(filename + " : " + md5)
+            #print(filename + " : " + md5)
             md5_list.append(md5)
+            file_type_list.append(mime_type)
+            print mime_type
 
 
 def query_md5():
@@ -48,5 +51,59 @@ def query_md5():
 
     print(response)
 
-read_file('0b08c5785b3c01c2113b6e8a4bf6738d_20120817/files.log')
-#query_md5()
+
+"""
+This method displays the file types in a graph
+"""
+
+
+def show_file_types():
+
+    small_size = 6
+    matplotlib.rc('font', size=small_size)
+
+    s = Counter(file_type_list)         # Counts the top file types in the log file
+    sDict = dict(s)                     # Converts them to a dictionary
+    xVals = []                          # X Value list is declared
+    yVals = []                          # Y Value list is declared
+    count = 0                           # Loop count is set to zero
+
+    for key, value in sorted(sDict.iteritems(), key=lambda (k, v): (v, k)):   # Sorts values into X & Y
+        count += 1                          # Count is incremented by one
+        if count > len(sDict)-10:           # If the count is greater than 10 append the first 10 x & y values
+            xVals.append(key)               # The x value gets added
+            yVals.append(value)             # The y value gets added
+
+    plt.barh(xVals, yVals, color='red')   # The figure is plotted
+    plt.suptitle('Top File Types', fontsize=14, fontweight='bold')              # Title is set
+    plt.xlabel('Type of File', fontsize=10, fontweight='bold')                  # X axis titles
+    plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
+    dportfig = plt.gcf()                                                        # Figure is formatted
+    dportfig.set_size_inches(12, 8)                                             # Figure is sized
+    dportfig.savefig(os.path.join('files/')+"files_types.png")                  # Figure is saved
+    plt.close()                                                                 # Graph is closed
+
+"""
+This method opens up the template report
+"""
+
+
+def generate_files_report():
+
+    webbrowser.open_new_tab("files_bro_log.html")      # Uses web browser library to open report
+
+
+"""
+Main method this calls other methods needed for gathering data from the log file
+"""
+
+
+def main():
+    read_file('0ad9515239c4033d84936c2e6ba00ed1_20120624/files.log')
+    show_file_types()
+    generate_files_report()
+
+
+if __name__ == '__main__':
+
+    main()

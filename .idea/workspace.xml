@@ -15,7 +15,7 @@
       <file leaf-file-name="html_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6972">
+            <state relative-caret-position="103">
               <caret line="340" column="11" lean-forward="false" selection-start-line="340" selection-start-column="11" selection-end-line="340" selection-end-column="11" />
               <folding>
                 <element signature="e#55#142#0" expanded="true" />
@@ -24,10 +24,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weird_parser.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weird_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weird_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="1302">
               <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
@@ -36,11 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="weird.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/weird.log">
+      <file leaf-file-name="files_parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="105" lean-forward="false" selection-start-line="9" selection-start-column="84" selection-end-line="9" selection-end-column="108" />
+            <state relative-caret-position="337">
+              <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+              <folding>
+                <element signature="e#27#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="files.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/files.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="8" column="120" lean-forward="true" selection-start-line="8" selection-start-column="120" selection-end-line="8" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -49,8 +61,8 @@
       <file leaf-file-name="dhcp_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dhcp_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="156" column="39" lean-forward="false" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+            <state relative-caret-position="61">
+              <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="200" selection-end-column="3" />
               <folding>
                 <element signature="e#0#87#0" expanded="true" />
               </folding>
@@ -61,8 +73,18 @@
       <file leaf-file-name="weird_bro_log.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weird_bro_log.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+            <state relative-caret-position="250">
+              <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="files_bro_log.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/files_bro_log.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -71,8 +93,18 @@
       <file leaf-file-name="dhcp_bro_log.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dhcp_bro_log.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
+            <state relative-caret-position="250">
+              <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http_bro_log.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/http_bro_log.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -81,8 +113,8 @@
       <file leaf-file-name="main_menu.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_menu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="83" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
+            <state relative-caret-position="189">
+              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -122,16 +154,17 @@
         <option value="$PROJECT_DIR$/bro_app/templates/http_dashboard.html" />
         <option value="$PROJECT_DIR$/bro_app/main.py" />
         <option value="$PROJECT_DIR$/dns_parser.py" />
-        <option value="$PROJECT_DIR$/files_parser.py" />
         <option value="$PROJECT_DIR$/Bro-Log-Report.html" />
         <option value="$PROJECT_DIR$/html_parser.py" />
         <option value="$PROJECT_DIR$/dhcp_bro_html.html" />
+        <option value="$PROJECT_DIR$/weird_parser.py" />
+        <option value="$PROJECT_DIR$/main_menu.py" />
+        <option value="$PROJECT_DIR$/dhcp_parser.py" />
+        <option value="$PROJECT_DIR$/files_parser.py" />
         <option value="$PROJECT_DIR$/http_bro_log.html" />
         <option value="$PROJECT_DIR$/dhcp_bro_log.html" />
-        <option value="$PROJECT_DIR$/main_menu.py" />
         <option value="$PROJECT_DIR$/weird_bro_log.html" />
-        <option value="$PROJECT_DIR$/dhcp_parser.py" />
-        <option value="$PROJECT_DIR$/weird_parser.py" />
+        <option value="$PROJECT_DIR$/files_bro_log.html" />
       </list>
     </option>
   </component>
@@ -180,7 +213,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="0ad9515239c4033d84936c2e6ba00ed1_20120624" />
+              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,24 +289,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="dns_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="brologger" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dns_parser.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="weird_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -305,6 +320,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="brologger" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dhcp_parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="files_parser" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="brologger" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/files_parser.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -377,17 +410,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.html_parser" />
       <item index="1" class="java.lang.String" itemvalue="Python.main_menu" />
-      <item index="2" class="java.lang.String" itemvalue="Python.dns_parser" />
-      <item index="3" class="java.lang.String" itemvalue="Python.weird_parser" />
-      <item index="4" class="java.lang.String" itemvalue="Python.dhcp_parser" />
+      <item index="2" class="java.lang.String" itemvalue="Python.weird_parser" />
+      <item index="3" class="java.lang.String" itemvalue="Python.dhcp_parser" />
+      <item index="4" class="java.lang.String" itemvalue="Python.files_parser" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.main_menu" />
-        <item index="1" class="java.lang.String" itemvalue="Python.dhcp_parser" />
-        <item index="2" class="java.lang.String" itemvalue="Python.weird_parser" />
-        <item index="3" class="java.lang.String" itemvalue="Python.html_parser" />
-        <item index="4" class="java.lang.String" itemvalue="Python.dns_parser" />
+        <item index="1" class="java.lang.String" itemvalue="Python.files_parser" />
+        <item index="2" class="java.lang.String" itemvalue="Python.dhcp_parser" />
+        <item index="3" class="java.lang.String" itemvalue="Python.weird_parser" />
+        <item index="4" class="java.lang.String" itemvalue="Python.html_parser" />
       </list>
     </recent_temporary>
   </component>
@@ -439,7 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_stats.log" />
     <entry file="file://$PROJECT_DIR$/conn.log" />
     <entry file="file://$PROJECT_DIR$/http_top_dports.png" />
     <entry file="file://$PROJECT_DIR$/htttp/http_urls.png" />
@@ -528,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/files.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -546,23 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6972">
-          <caret line="340" column="11" lean-forward="false" selection-start-line="340" selection-start-column="11" selection-end-line="340" selection-end-column="11" />
-          <folding>
-            <element signature="e#55#142#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -580,21 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/http_bro_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="36" column="65" lean-forward="false" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dhcp_bro_log.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/weird.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -603,41 +596,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weird_bro_log.html">
+    <entry file="file://$PROJECT_DIR$/0ad9515239c4033d84936c2e6ba00ed1_20120624/files.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="45" column="45" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+        <state relative-caret-position="168">
+          <caret line="8" column="120" lean-forward="true" selection-start-line="8" selection-start-column="120" selection-end-line="8" selection-end-column="120" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="340" column="11" lean-forward="false" selection-start-line="340" selection-start-column="11" selection-end-line="340" selection-end-column="11" />
+          <folding>
+            <element signature="e#55#142#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dhcp_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="156" column="39" lean-forward="false" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+        <state relative-caret-position="61">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="200" selection-end-column="3" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_menu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="83" lean-forward="false" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/weird_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="1302">
           <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding>
             <element signature="e#0#87#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+          <folding>
+            <element signature="e#27#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/http_bro_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="37" column="47" lean-forward="false" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dhcp_bro_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weird_bro_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="37" column="43" lean-forward="false" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files_bro_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="37" column="59" lean-forward="false" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

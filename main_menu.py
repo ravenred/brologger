@@ -7,6 +7,10 @@ import dhcp_parser
 
 def main():
     root = Tk()
+    root.wm_title("Bro Logger")
+
+    Frame(root, height=500, width=750)
+
     root.http_file = tkFileDialog.askopenfilename(initialdir="/", title="Select a http.log file",
                                                   filetypes=(("log files", "*.log"),
                                                              ("all files", "*.*")))
