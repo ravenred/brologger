@@ -68,7 +68,7 @@ def show_destination_port():
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
-    dportfig.savefig(os.path.join('weird/')+"weird_dport.png")                  # Figure is saved
+    dportfig.savefig(os.path.join('dhcp/')+"dhcp_dport.png")                  # Figure is saved
     plt.close()                                                                 # Graph is closed
 
 
@@ -100,7 +100,7 @@ def show_destination_ip():
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
-    dportfig.savefig(os.path.join('weird/')+"weird_destip.png")                 # Figure is saved
+    dportfig.savefig(os.path.join('dhcp/')+"dhcp_destip.png")                 # Figure is saved
     plt.close()                                                                 # Graph is closed
 
 
@@ -114,18 +114,15 @@ def find_mac_address():
     # API base url,you can also use https if you need
     url = "http://macvendors.co/api/"
     # Mac address to lookup vendor from
-    # mac_address = "BC:92:6B:A0:00:01"
 
     for mac_address in mac_address_list:
 
-        request = urllib2.Request(url+mac_address, headers={'User-Agent' : "API Browser"})
+        request = urllib2.Request(url+mac_address, headers={'User-Agent': "API Browser"})
         response = urllib2.urlopen(request)
+
         # Fix: json object must be str, not 'bytes'
         reader = codecs.getreader("utf-8")
         obj = json.load(reader(response))
-
-        # Print company name
-        print (obj['result']['company'])
 
         # Results are formatted to be stored
         results = (obj['result']['company'])
@@ -187,12 +184,12 @@ def show_mac_addresses():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals, color='red')   # The figure is plotted
-    plt.suptitle('Top Mac Address', fontsize=14, fontweight='bold')      # Title is set
-    plt.xlabel('Address', fontsize=10, fontweight='bold')                           # X axis titles
+    plt.suptitle('Top Mac Address', fontsize=14, fontweight='bold')             # Title is set
+    plt.xlabel('Address', fontsize=10, fontweight='bold')                       # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted
     dportfig.set_size_inches(10, 5)                                             # Figure is sized
-    dportfig.savefig(os.path.join('dhcp/')+"dhcp_address.png")                 # Figure is saved
+    dportfig.savefig(os.path.join('dhcp/')+"dhcp_address.png")                  # Figure is saved
     plt.close()                                                                 # Graph is closed
 
 
@@ -213,7 +210,6 @@ Main method this calls other methods needed for gathering data from the log file
 
 def main():
 
-    #read_file('0ad9515239c4033d84936c2e6ba00ed1_20120624\dhcp.log')
     show_destination_ip()
     show_destination_port()
     find_mac_address()

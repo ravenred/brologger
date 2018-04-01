@@ -8,9 +8,6 @@ import os                                       # Imports the real file path for
 from collections import Counter                 # Imports Counter for lists
 import matplotlib                               # Imports Libraries for graphs
 import matplotlib.pyplot as plt                 # Shortens the matplotlib library call
-import geoip2.database                          # Imports the database reader
-import geoip2.errors                            # Imports the Error message
-from mpl_toolkits.basemap import Basemap        # From the MPL tools imports Basemap
 
 """These are the lists used to gather the data from the log"""
 parsed_log = []                # Parsed Bro Log with converted time
@@ -20,6 +17,7 @@ destination_ip_list = []       # Destination IP List
 destination_port_list = []     # Destination Port List
 service_list = []              # Services List
 protocol_list = []             # Protocols List
+history_list = []              # History of Connections List
 
 
 """
@@ -51,6 +49,7 @@ def read_file(file_name):
             destination_port_list.append(resp_p)
             service_list.append(service)
             protocol_list.append(proto)
+            history_list.append(history)
 
 
 """
@@ -149,6 +148,38 @@ def show_protocols():
     plt.close()                                                                 # Graph is closed
 
 
+    """
+This method displays the destination ip in a graph
+"""
+
+
+def show_history():
+
+    small_size = 8
+    matplotlib.rc('font', size=small_size)
+
+    s = Counter(history_list)           # Counts the top IP's in the log file
+    sDict = dict(s)                     # Converts them to a dictionary
+    xVals = []                          # X Value list is declared
+    yVals = []                          # Y Value list is declared
+    count = 0                           # Loop count is set to zero
+
+    for key, value in sorted(sDict.iteritems(), key=lambda (k, v): (v, k)):   # Sorts values into X & Y
+        count += 1                          # Count is incremented by one
+        if count > len(sDict)-10:           # If the count is greater than 10 append the first 10 x & y values
+            xVals.append(key)               # The x value gets added
+            yVals.append(value)             # The y value gets added
+
+    plt.bar(xVals, yVals, color="red")                                          # The figure is plotted
+    plt.suptitle('History of Connections', fontsize=14, fontweight='bold')      # Title is set
+    plt.xlabel('Connections', fontsize=10, fontweight='bold')                   # X axis titles
+    plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
+    dportfig = plt.gcf()                                                        # Figure is formatted
+    dportfig.set_size_inches(12, 5)                                             # Figure is sized
+    dportfig.savefig(os.path.join('conn/')+"conn_history.png")                  # Figure is saved
+    plt.close()                                                                 # Graph is closed
+
+
 """
 This method opens up the template report
 """
@@ -169,6 +200,7 @@ def main():
     show_destination_ip()
     show_services()
     show_protocols()
+    show_history()
     generate_html_report()
 
 

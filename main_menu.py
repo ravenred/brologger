@@ -40,8 +40,8 @@ def main():
 
     # Connections Dialog
     root.conn_file = tkFileDialog.askopenfilename(initialdir="/", title="Select a conn.log file",
-                                                   filetypes=(("log files", "*.log"),
-                                                              ("all files", "*.*")))
+                                                  filetypes=(("log files", "*.log"),
+                                                             ("all files", "*.*")))
     print (root.conn_file)
 
     #Parser Code

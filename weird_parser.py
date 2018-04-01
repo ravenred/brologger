@@ -120,7 +120,7 @@ def show_destination_ip():
             yVals.append(value)             # The y value gets added
 
     plt.bar(xVals, yVals, color='purple')                                       # The figure is plotted
-    plt.suptitle('Top Notices', fontsize=14, fontweight='bold')                 # Title is set
+    plt.suptitle('Top IPs', fontsize=14, fontweight='bold')                 # Title is set
     plt.xlabel('IPs', fontsize=10, fontweight='bold')                           # X axis titles
     plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
     dportfig = plt.gcf()                                                        # Figure is formatted

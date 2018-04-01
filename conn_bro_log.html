@@ -15,10 +15,14 @@
         }
         .container {
             background-color: #8c8c8c;
+            margin: 0 auto;
         }
         .container.img {
             display: block;
             margin: 0 auto;
+        }
+        table {
+            color: #4c4c4c;
         }
     </style>
 </head>
@@ -42,6 +46,47 @@
 </nav>
 <div class="container">
     <h2>Connections Log File</h2>
+        <h3>Connection History</h3>
+        <img src="conn/conn_history.png"/>
+        <h3>Connection History Key</h3>
+            <table class="table table-striped" border="2">
+                <tr>
+                    <th>Letter <br></th>
+                    <th>Meaning</th>
+                </tr>
+                <tr class="active">
+                    <td>S <br></td>
+                    <td>a SYN without the ACK bit set</td>
+                </tr>
+                <tr>
+                    <td>H <br></td>
+                    <td>a SYN-ACK ("handshake")</td>
+                </tr>
+                <tr class="active">
+                    <td>A <br></td>
+                    <td>a pure ACK</td>
+                </tr>
+                <tr>
+                    <td>D <br></td>
+                    <td>packet with payload("data")</td>
+                </tr>
+                <tr class="active">
+                    <td>F <br></td>
+                    <td>packet with FIN bit set</td>
+                </tr>
+                <tr>
+                    <td>R <br></td>
+                    <td>packet with RST bit set</td>
+                </tr>
+                <tr class="active">
+                    <td>C <br></td>
+                    <td>packet with a bad checksum</td>
+                </tr>
+                <tr>
+                    <td>I <br></td>
+                    <td>Inconsistent packet (Both SYN &amp; RST)</td>
+                </tr>
+            </table>
         <h3>Destination IPs</h3>
         <img src= "conn/conn_destip.png"/>
         <h3>Services</h3>
@@ -49,7 +94,10 @@
         <h3>Protocols</h3>
         <img src="conn/conn_protocols.png"/>
 </div>
-
+<hr>
+<footer class="page-footer font-large  pt-4 mt-4">
+    <p class="text-center text-md-left">&copy; 2018 Copyright: <a href="mailto:B00080570@student.itb.ie"><strong>B00080570@student.itb.ie</strong></a></p>
+</footer>
 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
