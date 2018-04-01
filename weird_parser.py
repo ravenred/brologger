@@ -75,7 +75,7 @@ This method displays the destination port in a graph
 
 def show_destination_port():
 
-    s = Counter(destination_ip_list)        # Counts the top destination ports in the log file
+    s = Counter(destination_port_list)        # Counts the top destination ports in the log file
     sDict = dict(s)                         # Converts them to a dictionary
     xVals = []                              # X Value list is declared
     yVals = []                              # Y Value list is declared
@@ -107,7 +107,7 @@ def show_destination_ip():
     small_size = 6
     matplotlib.rc('font', size=small_size)
 
-    s = Counter(destination_port_list)  # Counts the top IP's in the log file
+    s = Counter(destination_ip_list)  # Counts the top IP's in the log file
     sDict = dict(s)                     # Converts them to a dictionary
     xVals = []                          # X Value list is declared
     yVals = []                          # Y Value list is declared

@@ -3,6 +3,7 @@ import Tkinter, Tkconstants, tkFileDialog
 import html_parser
 import weird_parser
 import dhcp_parser
+import files_parser
 
 
 def main():
@@ -26,6 +27,11 @@ def main():
                                                              ("all files", "*.*")))
     print (root.dhcp_file)
 
+    root.files_file = tkFileDialog.askopenfilename(initialdir="/", title="Select a files.log file",
+                                                   filetypes=(("log files", "*.log"),
+                                                              ("all files", "*.*")))
+    print (root.files_file)
+
     #Parser Code
     html_parser.read_file(root.http_file)
     html_parser.main()
@@ -33,6 +39,8 @@ def main():
     weird_parser.main()
     dhcp_parser.read_file(root.dhcp_file)
     dhcp_parser.main()
+    files_parser.read_file(root.files_file)
+    files_parser.main()
 
 
 if __name__ == '__main__':
