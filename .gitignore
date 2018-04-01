@@ -7,3 +7,4 @@ bro_app/http.log
 *.log
 *.pyc
 *.pyc
+*.pyc

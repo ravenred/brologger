@@ -291,6 +291,7 @@ This method generates the global map of the cities
 
 def map_cities():
 
+    plt.figure(figsize=(12, 6))
     m = Basemap()                                       # m equals the Basemap graph
     m.bluemarble()                                      # Uses the earth background
 
