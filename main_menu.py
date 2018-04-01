@@ -12,8 +12,6 @@ def main():
     root.wm_title("Bro Logger")
     root.iconbitmap('brologger.ico')
 
-    Frame(root, height=500, width=750)
-
     # HTTP Dialog
     root.http_file = tkFileDialog.askopenfilename(initialdir="/", title="Select a http.log file",
                                                   filetypes=(("log files", "*.log"),
