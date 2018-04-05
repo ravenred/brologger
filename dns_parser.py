@@ -9,8 +9,6 @@ import os
 from collections import Counter
 import matplotlib
 import matplotlib.pyplot as plt
-import pylab
-import geoip2.database
 import credentials
 
 parsed_log = []
