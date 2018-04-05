@@ -1,5 +1,6 @@
 """
-Imported Libirary 
+Author : Ian O'Connell
+Student No. : B00080570
 """
 import datetime
 import requests
@@ -10,9 +11,11 @@ import matplotlib
 import matplotlib.pyplot as plt
 import pylab
 import geoip2.database
+import credentials
 
 parsed_log = []
 ip_list = []
+query_list = []
 
 
 def read_file(file):
@@ -30,13 +33,16 @@ def read_file(file):
             #print(new_line)
 
             time, uid, id_orig_h, id_orig_p, id_resp_h, id_resp_p, proto, trans_id, \
-            query, qclass, qclass_name, qtype, qtype_name,rcode, rcode_name, AA, TC, RD, RA, Z,\
+            query, qclass, qclass_name, qtype, qtype_name, rcode, rcode_name, AA, TC, RD, RA, Z,\
             answers, TTLs, rejected = \
                 tuple(map(str, new_line.split("\t")))
 
-            print(answers.split(','))
-            print(query)
-            ip_list.append(query)
+            ip_list.append(id_resp_h)
+            query_list.append(query)
+
+"""
+Query the ip list for 
+"""
 
 
 def query_md5():
@@ -44,9 +50,60 @@ def query_md5():
     url = 'https://www.virustotal.com/vtapi/v2/domain/report'
 
     for i in ip_list:
-        params = {'apikey': 'c85bf7d2a48c392a1b39175ec50ecde00dba85b542c70574388e176c5ca67adb', 'ip': i}
-        response = requests.get(url, params=params)
-        print(response.json())
+        params = {'apikey': credentials.apikey, 'ip': i}
+        try:
+            response = requests.get(url, params=params)
+            print(unicode(response.json()))
+        except requests.DependencyWarning:
+            pass
 
-read_file('0b08c5785b3c01c2113b6e8a4bf6738d_20120817/dns.log')
-#query_md5()
+
+def show_queries():
+
+    small_size = 8
+    matplotlib.rc('font', size=small_size)
+
+    s = Counter(query_list)         # Counts the top IP's in the log file
+    sDict = dict(s)                 # Converts them to a dictionary
+    xVals = []                      # X Value list is declared
+    yVals = []                      # Y Value list is declared
+    count = 0                       # Loop count is set to zero
+    for key, value in sorted(sDict.iteritems(), key=lambda (k, v): (v, k)):     # Sorts values into X & Y
+        count += 1                      # Count is incremented by one
+        if count > len(sDict)-5:        # If the count is greater than 10 append the first 10 x & y values
+            xVals.append(key)           # The x value gets added
+            yVals.append(value)         # The y value gets added
+
+    plt.barh(xVals, yVals, color='purple')                                         # The figure is plotted
+    plt.suptitle('Top Requested Queries', fontsize=14, fontweight='bold')       # Title is set
+    plt.xlabel('Queries', fontsize=10, fontweight='bold')                       # X axis titles
+    plt.ylabel('Total', fontsize=10, fontweight='bold')                         # Y axis titles
+    dportfig = plt.gcf()                                                        # Figure is formatted
+    dportfig.set_size_inches(12, 8)                                             # Figure is sized
+    dportfig.savefig(os.path.join('dns/')+"dns_queries.png")                    # Figure is saved
+    plt.close()                                                                 # Graph is closed
+
+
+"""
+This method opens up the template report
+"""
+
+
+def generate_html_report():
+
+    webbrowser.open_new_tab("dns_bro_log.html")      # Uses web browser library to open report
+
+
+"""
+Main method this calls other methods needed for gathering data from the log file
+"""
+
+
+def main():
+    #query_md5()
+    show_queries()
+    generate_html_report()
+
+
+if __name__ == '__main__':
+    main()

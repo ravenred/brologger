@@ -1,10 +1,11 @@
 from Tkinter import *
 import Tkinter, Tkconstants, tkFileDialog
-import html_parser
+import http_parser
 import weird_parser
 import dhcp_parser
 import files_parser
 import connection_parser
+import dns_parser
 
 
 def main():
@@ -42,9 +43,15 @@ def main():
                                                              ("all files", "*.*")))
     print (root.conn_file)
 
+    # DNS Dialog
+    root.dns_file = tkFileDialog.askopenfilename(initialdir="/", title="Select a dns.log file",
+                                                 filetypes=(("log files", "*.log"),
+                                                            ("all files", "*.*")))
+    print (root.dns_file)
+
     #Parser Code
-    html_parser.read_file(root.http_file)
-    html_parser.main()
+    http_parser.read_file(root.http_file)
+    http_parser.main()
     weird_parser.read_file(root.weird_file)
     weird_parser.main()
     dhcp_parser.read_file(root.dhcp_file)
@@ -53,6 +60,8 @@ def main():
     files_parser.main()
     connection_parser.read_file(root.conn_file)
     connection_parser.main()
+    dns_parser.read_file(root.dns_file)
+    dns_parser.main()
 
 
 if __name__ == '__main__':
